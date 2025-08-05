@@ -129,7 +129,7 @@ const App = () => {
               </button>
             ))}
             <a
-              href="/Pooja_K_S_Resume.pdf"
+              href="PortFolio-New/Pooja_K_S_Resume.pdf"
               className="border border-teal-300 text-teal-300 px-4 py-2 rounded hover:bg-teal-300/10 transition-colors"
             >
               Resume
