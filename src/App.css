@@ -1,0 +1,64 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* Custom CSS for vertical text */
+.vertical-text {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1e293b;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #475569;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}
+
+/* Custom selection */
+::selection {
+  background-color: #14b8a6;
+  color: #0f172a;
+}
+
+/* Font smoothing */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Focus states */
+button:focus,
+a:focus {
+  outline: 2px solid #14b8a6;
+  outline-offset: 2px;
+}
+
+/* Backdrop blur fallback */
+@supports not (backdrop-filter: blur(10px)) {
+  .backdrop-blur-sm {
+    background-color: rgba(15, 23, 42, 0.95);
+  }
+}
+
+/* Ensure dark background if Tailwind isn't loading */
+body {
+  background-color: #0f172a;
+  color: #cbd5e1;
+}
