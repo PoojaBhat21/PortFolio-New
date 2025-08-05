@@ -13,13 +13,18 @@ jobs:
       uses: actions/setup-node@v4
       with:
         node-version: '18'
-        cache: 'npm'
+        
+    - name: Clear npm cache
+      run: npm cache clean --force
         
     - name: Install dependencies
-      run: npm install
+      run: npm install --no-optional
+      
+    - name: Verify react-scripts installation
+      run: ls -la node_modules/.bin/react-scripts
       
     - name: Build
-      run: npm run build
+      run: npx react-scripts build
       
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
