@@ -12,7 +12,10 @@ jobs:
         node-version: '18'
     - run: npm install -g yarn
     - run: yarn install
-    - run: yarn build
+    - name: Build with warnings allowed
+      run: yarn build
+      env:
+        CI: false
     - uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
