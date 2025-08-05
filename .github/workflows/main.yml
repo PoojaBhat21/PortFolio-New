@@ -29,11 +29,17 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v4
         
+      - name: Clear npm cache
+        run: npm cache clean --force
+        
       - name: Install dependencies
         run: npm install
         
+      - name: Fix permissions
+        run: chmod +x node_modules/.bin/react-scripts
+        
       - name: Build
-        run: npm run build
+        run: npx react-scripts build
         env:
           CI: false
           PUBLIC_URL: /PortFolio-New
